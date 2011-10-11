@@ -1,4 +1,5 @@
-### Dark Souls Character Builder 
+ Dark Souls Character Builder
+======================================
 ### v0.2d
 
 [ UPDATE ] v0.2d
