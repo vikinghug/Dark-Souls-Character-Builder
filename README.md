@@ -12,11 +12,13 @@
 * Starting Cost" for souls is redundant, should be remove
 * Manual Stat entry
 
+
 ### BACKLOG
 * Reset stats button
 * Manual Soul Level entry, to allow locked stat allocation.
 * Display Spell slots from Attunement
 * Display Encumbrance/Stamina/HP from relative stats
+
 
 ### BUGS
 - Current Soul level does not reset to white, remains red
