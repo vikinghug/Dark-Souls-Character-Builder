@@ -23,7 +23,7 @@
 - Current Soul level does not reset to white, remains red
 
 ### Done
-* ~"Starting Cost" for souls is redundant, should be remove~
-* ~Calculate Soul costs based on stats~
-* ~Calculate Soul Level based on stats~
-* ~Add & Subtract Stats~
+* ~~"Starting Cost" for souls is redundant, should be remove~~
+* ~~Calculate Soul costs based on stats~~
+* ~~Calculate Soul Level based on stats~~
+* ~~Add & Subtract Stats~~
