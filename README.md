@@ -1,6 +1,13 @@
  Dark Souls Character Builder
 ======================================
-### v0.2d
+### v0.21d
+
+[ UPDATE ] v0.21d
+-----------------------------------
+* Manual Stat entry
+* "Starting Cost" for souls is redundant, should be remove
++ Basic Art: just to make it not so atrocious.
++ New Layout: more understandable
 
 [ UPDATE ] v0.2d
 -----------------------------------
@@ -22,6 +29,7 @@
 
 ### BUGS
 - Current Soul level does not reset to white, remains red
+- Too man stats returns NaN in Total Cost... need to build the formula for stat calculation
 
 ### Done
 * ~~Manual Stat entry~~
