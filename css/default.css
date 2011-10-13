@@ -9,6 +9,11 @@ body
 	padding: 0;
 }
 
+a
+{
+	color: #0ac1ff;
+}
+
 #mainwrapper
 {
 	width: 100%;
