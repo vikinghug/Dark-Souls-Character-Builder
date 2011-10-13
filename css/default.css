@@ -1,0 +1,156 @@
+body
+{
+	font-family: Helvetica, Arial;
+	font-size: 10pt;
+	background-color: #2d2d2d;
+	background-image: url(../images/background.png);
+	color: #fefefe;
+	margin: 0;
+	padding: 0;
+}
+
+#mainwrapper
+{
+	width: 100%;
+	min-height: 800px;
+	background-image: url(../images/grad.png);
+	background-repeat: repeat-x;
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper
+{
+	background-color: #333;
+	padding: 10px;
+	width: 600px;
+	margin: 0 auto;
+}
+
+/* Class Wrapper */
+#classwrapper
+{
+	padding-top: 20px;
+}
+
+#soullevel
+{
+	display: inline-block;
+	float: right;
+}
+
+/* Row Label */
+label
+{
+	display: inline-block;
+	width: 110px;
+}
+
+/* Input Stuff */
+.stat
+{
+	height: 28px;
+}
+
+.start
+{
+	color: #666;
+	font-family: tahoma;
+	font-size: 10pt;
+	text-align: center;
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	background: #333;
+	border: 1px solid #383838;
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+}
+
+.current, .total
+{
+	color: #fff;
+	font-family: tahoma;
+	font-size: 10pt;
+	text-align: center;
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	background: #121212;
+	border: 1px solid #3d3d3d;
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+}
+
+
+/* Add & Subtract Buttons */
+.add, .subtract
+{
+	height: 20px;
+	width: 20px;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border: none;
+}
+
+.add
+{
+	
+	background-image: url(../images/add.png);
+	top: 2px;
+	margin-left: -8px;
+}
+
+.subtract
+{
+	background-image: url(../images/subtract.png);
+}
+
+
+/* calc */
+#calc
+{
+	background-color: #3f3f3f;
+	padding: 10px;
+}
+#calc > div
+{
+	background-color: #222;
+	border: 1px solid #444;
+	width: 76px;
+}
+
+/* Input Headers */
+.title
+{
+	font-family: verdana;
+	display: inline-block;
+	background: transparent;
+	border: none;
+	font-size: 6pt;
+	text-align: center;
+	width: 42px;
+}
+
+#soultitles
+{
+	float: right;
+}
+
+/* Main Header */
+#header
+{
+	padding-top: 20px;
+	margin: 0 auto;
+	width: 500px;
+}
+
+
+/* Main Footer */
+#footer
+{
+	margin: 0 auto;
+	width: 500px;
+}
