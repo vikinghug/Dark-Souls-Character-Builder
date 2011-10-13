@@ -38,6 +38,8 @@ $(document).ready(function()
 		
 		var canRun = false;
 		
+		var newCost;
+		
 		// Check Adjustment Type
 		if (modifier == "calc")
 		{
@@ -86,12 +88,15 @@ $(document).ready(function()
 			currentItem.css("color", "#fff");
 		}
 		
+		
+		newCost = calcSoulCost(currentSoulLevel);
+		
 		if (canRun)
 		{
 			currentSoulLevel += soulModifier;
 			
 			$("#soullevel .current").val(currentSoulLevel);
-			$("#calc .current").val(soulCosts[currentSoulLevel]);
+			$("#calc .current").val(newCost);
 			$("#calc .total").text(calculateCost(startSoulLevel, currentSoulLevel));
 		}
 	}
@@ -162,7 +167,7 @@ $(document).ready(function()
 		$("#faith .start").text(selectedStat[8]);
 		
 		// calc
-		$("#calc .start").text(soulCosts[parseInt($("#soullevel .start").text())]);
+		$("#calc .start").text(calcSoulCost[parseInt($("#soullevel .start").text())]);
 		
 		
 		// current stats
@@ -182,7 +187,7 @@ $(document).ready(function()
 		
 		var soulLevel = parseInt($("#soullevel .current").val());
 		
-		$("#calc .current").val(soulCosts[soulLevel]);
+		$("#calc .current").val(calcSoulCost[soulLevel]);
 		$("#calc .total").text(0);
 		
 	};
@@ -193,8 +198,17 @@ $(document).ready(function()
 		if (startSoulLevel == currentSoulLevel) return 0;
 		
 		var temp = 0;
-		for (i = startSoulLevel; i < currentSoulLevel; i++) temp = temp + parseInt(soulCosts[i]);
+		for (i = startSoulLevel; i < currentSoulLevel; i++) temp = temp + parseInt(calcSoulCost(i));
 		
 		return temp;
+	}
+	
+	function calcSoulCost(level)
+	{
+		if(level < soulCosts.length) {
+			return soulCosts[level];
+		} else {
+			return Math.round((1/2.5)*Math.pow(((level+10)*1.1),2.5));
+		}
 	}
 });
