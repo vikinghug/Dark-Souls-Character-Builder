@@ -21,10 +21,25 @@
 
 ### BACKLOG
 * Reset stats button
-* Manual Soul Level entry, to allow locked stat allocation.
-* Display Spell slots from Attunement
-* Display Encumbrance/Stamina/HP from relative stats
+* Display Attunement -> Spell Slots conversion : http://darksouls.wikidot.com/attunement
+* Display Endurance conversions : http://darksouls.wikidot.com/endurance
+ * Endurance -> Equip Burden
+ * Endurance -> Stamina
+ * Endurance -> Bleed Resistance
+ * Endurance -> Roll Speed
+* Display Vitality -> HP conversion : http://darksouls.wikidot.com/vitality
+* Display Resistance -> Resistances conversion : http://darksouls.wikidot.com/resistance
+* Display Humanity conversions : http://darksouls.wikidot.com/humanity
+ * Humanity -> Item Discovery Rate
+ * Humanity -> Curse Resist
 * Profile Saving
+* Profile Sharing
+* 
+* 
+### Wishlist
+* Weapon Calculator
+* Armor Calculator
+* Manual Soul Level entry, to allow locked stat allocation.
 
 
 ### BUGS
