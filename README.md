@@ -34,8 +34,9 @@
  * Humanity -> Curse Resist
 * Profile Saving
 * Profile Sharing
-* 
-* 
+
+
+
 ### Wishlist
 * Weapon Calculator
 * Armor Calculator
