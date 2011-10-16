@@ -1,6 +1,12 @@
  Dark Souls Character Builder
 ======================================
-### v0.21d
+### v0.3d
+
+[ UPDATE ] v0.3d
+-----------------------------------
+* New layout, to reflect the in-game display
+* Added HP Conversion (this is the first of many conversions in this major update)
+
 
 [ UPDATE ] v0.21d
 -----------------------------------
@@ -27,13 +33,19 @@
  * Endurance -> Stamina
  * Endurance -> Bleed Resistance
  * Endurance -> Roll Speed
-* Display Vitality -> HP conversion : http://darksouls.wikidot.com/vitality
+* ~~Display Vitality -> HP conversion : http://darksouls.wikidot.com/vitality~~
 * Display Resistance -> Resistances conversion : http://darksouls.wikidot.com/resistance
 * Display Humanity conversions : http://darksouls.wikidot.com/humanity
  * Humanity -> Item Discovery Rate
  * Humanity -> Curse Resist
 * Profile Saving
 * Profile Sharing
+* ~~Display Vitality -> HP conversion : http://darksouls.wikidot.com/vitality~~
+* ~~Manual Stat entry~~
+* ~~"Starting Cost" for souls is redundant, should be remove~~
+* ~~Calculate Soul costs based on stats~~
+* ~~Calculate Soul Level based on stats~~
+* ~~Add & Subtract Stats~~
 
 
 
@@ -48,6 +60,7 @@
 - Too man stats returns NaN in Total Cost... need to build the formula for stat calculation
 
 ### Done
+* ~~Display Vitality -> HP conversion : http://darksouls.wikidot.com/vitality~~
 * ~~Manual Stat entry~~
 * ~~"Starting Cost" for souls is redundant, should be remove~~
 * ~~Calculate Soul costs based on stats~~
