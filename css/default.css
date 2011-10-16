@@ -14,7 +14,15 @@ a
 	color: #0ac1ff;
 }
 
-#mainwrapper
+hr
+{
+	border: none;
+	height: 2px;
+	background-color: #444;
+	margin: 6px 0 6px 0;
+}
+
+#wrapFullPage
 {
 	width: 100%;
 	min-height: 800px;
@@ -24,31 +32,58 @@ a
 	padding: 0;
 }
 
-#wrapper
+#content
 {
-	background-color: #333;
-	padding: 10px;
-	width: 600px;
+	width: 960px;
 	margin: 0 auto;
 }
 
-/* Class Wrapper */
-#classwrapper
+#wrapBuilder
 {
-	padding-top: 20px;
+	background-color: #444;
+	width: 960px;
+	margin: 0;
+	padding: 10px;
+	overflow: auto;
 }
 
-#soullevel
+#colLeft, #colMid, #colRight
 {
+	background-color: #333;
 	display: inline-block;
-	float: right;
+	float: left;
+}
+
+.the300
+{
+	min-height: 410px;
+	width: 280px;
+	margin: 10px;
+	padding: 10px;
+}
+
+/* CLASS WRAPPER */
+#wrapClass label
+{
+	width: 174px;
+}
+
+#class
+{
+	width: 96px;
 }
 
 /* Row Label */
 label
 {
 	display: inline-block;
-	width: 110px;
+	width: 180px;
+}
+
+
+.right
+{
+	float: right;
 }
 
 /* Input Stuff */
@@ -56,6 +91,8 @@ label
 {
 	height: 28px;
 }
+
+
 
 .start
 {
@@ -91,6 +128,12 @@ label
 
 
 /* Add & Subtract Buttons */
+.statShift
+{
+
+	position: absolute;
+	margin-left: 272px;
+}
 .add, .subtract
 {
 	height: 20px;
@@ -114,20 +157,27 @@ label
 }
 
 
+.conversion
+{
+	float: right;
+}
+
 /* calc */
 #calc
 {
-	background-color: #3f3f3f;
-	padding: 10px;
+	margin-top: 12px;
 }
-#calc > div
+#calc > div, #calc > input
 {
-	background-color: #222;
-	border: 1px solid #444;
-	width: 76px;
+	width: 120px;
+	vertical-align: top;
 }
 
 /* Input Headers */
+.stattitles
+{
+	height: 18px;
+}
 .title
 {
 	font-family: verdana;

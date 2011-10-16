@@ -15,19 +15,73 @@ $(document).ready(function()
 	var stats_cleric = [2,11,11,9,12,8,11,8,14];
 	var stats_deprived = [6,11,11,11,11,11,11,11,11];
 	
-	var soulCosts = [0,673,690,707,724,741,758,775,793,811,829,847,1039,1238,1445,1660,1883,2114,2353,2601,2857,3122,3396,3678,3970,4271,4581,4900,5229,5567,5915,6273,6641,7019,7407,7805,8214,8634,9064,9505,9957,10420,10894,11379,11876,12384,12904,13436,13979,14535,15103,15683,16275,16880,17497,18127,18770,19426,20095,20777,21472,22181,22904,23640,24390,25154,25932,26724,27530,28351,29186,30036,30901,31780,32675,33585,34510,35450,36406,37377,38364,39367,40386,41421,42472,43539,44623,45724,46841,47975,49126,50294,51479,52681,53901,55138,56393,57666,58956,60265,61592,62937,64300,65682,67082,68501,69939,71396,72872,74367,75881,77415,78969,80542,82135,83748,85381,87034,88707,90401,92115,93850,95606,97382,99180,100999,102839,104700,106583,108487,110413,112361,114331,116323,118337,120373,122432,124514,126618,128745,130895,133068,135264,137483,139726,141992];
+	var soulCostsArray = [0,673,690,707,724,741,758,775,793,811,829,847,1039,1238,1445,1660,1883,2114,2353,2601,2857,3122,3396,3678,3970,4271,4581,4900,5229,5567,5915,6273,6641,7019,7407,7805,8214,8634,9064,9505,9957,10420,10894,11379,11876,12384,12904,13436,13979,14535,15103,15683,16275,16880,17497,18127,18770,19426,20095,20777,21472,22181,22904,23640,24390,25154,25932,26724,27530,28351,29186,30036,30901,31780,32675,33585,34510,35450,36406,37377,38364,39367,40386,41421,42472,43539,44623,45724,46841,47975,49126,50294,51479,52681,53901,55138,56393,57666,58956,60265,61592,62937,64300,65682,67082,68501,69939,71396,72872,74367,75881,77415,78969,80542,82135,83748,85381,87034,88707,90401,92115,93850,95606,97382,99180,100999,102839,104700,106583,108487,110413,112361,114331,116323,118337,120373,122432,124514,126618,128745,130895,133068,135264,137483,139726,141992];
+	var hitPointsArray = [0,400,415,433,451,471,490,511,530,552,572,594,616,638,658,682,698,718,742,766,792,821,849,878,908,938,970,1001,1034,1066,1100,1123,1147,1170,1193,1216,1239,1261,1283,1304,1325,1346,1366,1386,1405,1424,1442,1458,1474,1489,1500,1508,1517,1526,1535,1544,1553,1562,1571,1580,1588,1597,1606,1615,1623,1632,1641,1649,1658,1666,1675,1683,1692,1700,1709,1717,1725,1734,1742,1750,1758,1767,1775,1783,1791,1799,1807,1814,1822,1830,1837,1845,1852,1860,1867,1874,1881,1888,1894,1900];
 	
-	// Listeners
+	var cacheCurrentStat;
+	var cacheClass = charClass.find("option:selected");
+	
+	
+	// LISTENERS
+	// ------------------------------------------------------------------------
 	charClass.change(function()
 	{
 		CharSetup();
    	});
 
-	function AdjustStat($item, $mod)
+	// Clear the value of the input when clicked
+	$(".current").focus(function()
 	{
-		var currentItem = $item.parent().find(".current");
+		cacheCurrentStat = $(this).val();
+	});
+	
+	// When the input value changes, process the new value
+	$(".current").change(function()
+	{
+		AdjustStat($(this), "calc")
+			
+		$(this).blur();
+		
+	});
+	
+	
+	// Add +1 to stat
+	$(".add").click(function()
+	{
+		AdjustStat($(this), 1);
+
+	});
+	
+	// Subtract -1 from stat
+	$(".subtract").click(function()
+	{
+
+		AdjustStat($(this), -1);	
+		
+	});
+	
+	// Visual up/down for + and -
+	$(".subtract, .add").mousedown(function()
+	{
+		$(this).css({backgroundPosition: "0 -20px"});
+	});
+	
+	$(".subtract, .add").mouseup(function()
+	{
+		$(this).css({backgroundPosition: "0 0"});
+	});
+
+
+	// FUNCTIONS
+	// ------------------------------------------------------------------------
+	function AdjustStat($item, $mod, $plusMinus)
+	{
+
+		
+		var itemPath = $item.parents(".stat");
+		var currentItem = itemPath.find(".current");
 		var currentValue = parseInt(currentItem.val());
-		var startValue = parseInt($item.parent().find(".start").text());
+		var startValue = parseInt(itemPath.find(".start").text());
 
 		var startSoulLevel = parseInt($("#soullevel .start").text());
 		var currentSoulLevel = parseInt($("#soullevel .current").val());
@@ -53,7 +107,7 @@ $(document).ready(function()
 				newValue = currentValue;
 				
 				
-				soulModifier = newValue - test;
+				soulModifier = newValue - cacheCurrentStat;
 				
 			}
 			else
@@ -62,7 +116,7 @@ $(document).ready(function()
 				
 				soulModifier = 0;
 				modifier  = 0;
-				newValue = test;
+				newValue = cacheCurrentStat;
 			}
 		}
 		
@@ -74,6 +128,8 @@ $(document).ready(function()
 			newValue = currentValue + modifier;
 		}
 		
+		
+		// SET THE VALUE OF THE STAT
 		currentItem.val(newValue);
 		
 		if (newValue > startValue)
@@ -89,126 +145,131 @@ $(document).ready(function()
 		}
 		
 		
-		newCost = calcSoulCost(currentSoulLevel);
-		
 		if (canRun)
 		{
 			currentSoulLevel += soulModifier;
 			
 			$("#soullevel .current").val(currentSoulLevel);
-			$("#calc .current").val(newCost);
-			$("#calc .total").text(calculateCost(startSoulLevel, currentSoulLevel));
+			$("#calc .total").text(ParseSoulCost(startSoulLevel, currentSoulLevel));
+			
+			
+			// CHECK WHICH STAT IT IS
+			switch (itemPath.attr("id"))
+			{
+				case "vitality":
+					$("#HP .current").val(CalculateHitPoints(newValue));
+					break;
+				case "endurance":
+					break;
+				default:
+					break;
+			}
+
 		}
+		
+		newCost = CalculateSoulCost(currentSoulLevel);
+		$("#calc .current").val(newCost);
 	}
 	
 	
-	var test;
 	
-	$(".current").focus(function()
+	// Returns the Array for the specified HTML object
+	function GetClassArray(tempClass)
 	{
-		test = $(this).val();
-	});
-	
-	
-	$(".current").change(function()
-	{
-		AdjustStat($(this), "calc")
-			
-		$(this).blur();
+		var className = tempClass.val();
 		
-	});
-	
-	$(".add").click(function()
-	{
-		
-		AdjustStat($(this), 1);
-		
-	});
-	
-	$(".subtract").click(function()
-	{
-
-		AdjustStat($(this), -1);	
-		
-	});
-	
-	$(".subtract, .add").mousedown(function()
-	{
-		$(this).css({backgroundPosition: "0 -20px"});
-	});
-	
-	$(".subtract, .add").mouseup(function()
-	{
-		$(this).css({backgroundPosition: "0 0"});
-	});
-	
-
-	CharSetup();
+		return eval("stats_" + className.toLowerCase());
+	}
 	
 	// Setup Table function
 	function CharSetup()
 	{
+
 		
-		var selectedClass = charClass.find("option:selected").text().toLowerCase();
-		var selectedStat = eval("stats_" + selectedClass);
+		
+		var selectedClass = charClass.find("option:selected");
+		
+		// Set the names
+		cacheClass.text(GetClassArray(cacheClass)[0] + " - " + cacheClass.val());
+		selectedClass.text(selectedClass.val());
+		
+		var selectedClassArray = GetClassArray(selectedClass);
 		
 		
 		//starting stats
-		$("#calc .start").val()
-		$("#soullevel .start").text(selectedStat[0]);
+		$("#calc .start").val();
+		$("#soullevel .start").text(selectedClassArray[0]);
 		
-		$("#vitality .start").text(selectedStat[1]);
-		$("#attunement .start").text(selectedStat[2]);
-		$("#endurance .start").text(selectedStat[3]);
-		$("#strength .start").text(selectedStat[4]);
-		$("#dexterity .start").text(selectedStat[5]);
-		$("#resistance .start").text(selectedStat[6]);
-		$("#intelligence .start").text(selectedStat[7]);
-		$("#faith .start").text(selectedStat[8]);
-		
-		// calc
-		$("#calc .start").text(calcSoulCost[parseInt($("#soullevel .start").text())]);
+		$("#vitality .start").text(selectedClassArray[1]);
+		$("#attunement .start").text(selectedClassArray[2]);
+		$("#endurance .start").text(selectedClassArray[3]);
+		$("#strength .start").text(selectedClassArray[4]);
+		$("#dexterity .start").text(selectedClassArray[5]);
+		$("#resistance .start").text(selectedClassArray[6]);
+		$("#intelligence .start").text(selectedClassArray[7]);
+		$("#faith .start").text(selectedClassArray[8]);
 		
 		
 		// current stats
-		$("#soullevel .current").val(selectedStat[0]);
-		
-		$("#vitality .current").val(selectedStat[1]);
-		$("#attunement .current").val(selectedStat[2]);
-		$("#endurance .current").val(selectedStat[3]);
-		$("#strength .current").val(selectedStat[4]);
-		$("#dexterity .current").val(selectedStat[5]);
-		$("#resistance .current").val(selectedStat[6]);
-		$("#intelligence .current").val(selectedStat[7]);
-		$("#faith .current").val(selectedStat[8]);
+		$("#soullevel .current").val(selectedClassArray[0]);
+		$("#vitality .current").val(selectedClassArray[1]);
+		$("#attunement .current").val(selectedClassArray[2]);
+		$("#endurance .current").val(selectedClassArray[3]);
+		$("#strength .current").val(selectedClassArray[4]);
+		$("#dexterity .current").val(selectedClassArray[5]);
+		$("#resistance .current").val(selectedClassArray[6]);
+		$("#intelligence .current").val(selectedClassArray[7]);
+		$("#faith .current").val(selectedClassArray[8]);
 		
 		// calc
 		
 		
 		var soulLevel = parseInt($("#soullevel .current").val());
 		
-		$("#calc .current").val(calcSoulCost[soulLevel]);
+		$("#calc .current").val(CalculateSoulCost(soulLevel));
 		$("#calc .total").text(0);
+		
+		// Set Vitality
+		$("#HP .current").val(CalculateHitPoints(selectedClassArray[1]));
+		
+		
+		
+		// Set the cache
+		cacheClass = selectedClass;
 		
 	};
 	
-	function calculateCost(startSoulLevel, currentSoulLevel)
+	function CalculateHitPoints(vitality)
+	{
+		return hitPointsArray[vitality];
+	}
+	
+	
+	// Parse the array of costs, unless you get to the end, then use the APPX formula
+	function ParseSoulCost(startSoulLevel, currentSoulLevel)
 	{
 		
 		if (startSoulLevel == currentSoulLevel) return 0;
 		
 		var temp = 0;
-		for (i = startSoulLevel; i < currentSoulLevel; i++) temp = temp + parseInt(calcSoulCost(i));
+		for (i = startSoulLevel; i < currentSoulLevel; i++) temp = temp + parseInt(CalculateSoulCost(i));
 		
 		return temp;
 	}
 	
-	function calcSoulCost(level)
+	// james
+	function CalculateSoulCost(level)
 	{
-		if(level < soulCosts.length) {
-			return soulCosts[level];
-		} else {
+		if(level < soulCostsArray.length)
+		{
+			return soulCostsArray[level];
+		}
+		else
+		{
 			return Math.round((1/2.5)*Math.pow(((level+10)*1.1),2.5));
 		}
 	}
+	
+	// Run the CharSetup function
+	CharSetup();
 });
