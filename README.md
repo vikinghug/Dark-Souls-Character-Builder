@@ -2,23 +2,30 @@
 ======================================
 ### v0.3d
 
-[ UPDATE ] v0.3d
+[ UPDATE ] v0.31d
 -----------------------------------
-* New layout, to reflect the in-game display
-* Added HP Conversion (this is the first of many conversions in this major update)
+* Added A slew of hotkeys to the builder (These are relative to stats)
+ * UP: Increment Stat by +1
+ * DOWN: Decrement Stat by -1
+ * SHIFT+UP: Increment Stat by +10
+ * SHIFT+DOWN: Decrement Stat by -10
+ * SHIFT+Click on Plus or Minus: +10 or -10 to stat
 
-
-[ UPDATE ] v0.21d
+[ Previous Updates ]
 -----------------------------------
-* Manual Stat entry
-* "Starting Cost" for souls is redundant, should be remove
-+ Basic Art: just to make it not so atrocious.
-+ New Layout: more understandable
+- v0.3d
+ * New layout, to reflect the in-game display
+ * Added HP Conversion (this is the first of many conversions in this major update)
 
-[ UPDATE ] v0.2d
------------------------------------
-+ Basic Art: just to make it not so atrocious.
-+ New Layout: more understandable
+- v0.21d
+ * Manual Stat entry
+ * "Starting Cost" for souls is redundant, should be remove
+ + Basic Art: just to make it not so atrocious.
+ + New Layout: more understandable
+
+- v0.2d
+ + Basic Art: just to make it not so atrocious.
+ + New Layout: more understandable
 
 
 ### NEXT
