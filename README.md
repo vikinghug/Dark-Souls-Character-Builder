@@ -47,7 +47,6 @@
  * Humanity -> Curse Resist
 * Profile Saving
 * Profile Sharing
-* ~~Display Vitality -> HP conversion : http://darksouls.wikidot.com/vitality~~
 * ~~Manual Stat entry~~
 * ~~"Starting Cost" for souls is redundant, should be remove~~
 * ~~Calculate Soul costs based on stats~~
@@ -63,13 +62,5 @@
 
 
 ### BUGS
-- Current Soul level does not reset to white, remains red
-- Too man stats returns NaN in Total Cost... need to build the formula for stat calculation
-
-### Done
-* ~~Display Vitality -> HP conversion : http://darksouls.wikidot.com/vitality~~
-* ~~Manual Stat entry~~
-* ~~"Starting Cost" for souls is redundant, should be remove~~
-* ~~Calculate Soul costs based on stats~~
-* ~~Calculate Soul Level based on stats~~
-* ~~Add & Subtract Stats~~
+- Input fields do not reset to white when switching classes
+- ~~Too man stats returns NaN in Total Cost... need to build the formula for stat calculation~~
