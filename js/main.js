@@ -73,6 +73,13 @@ $(document).ready(function()
 		
 	});
 	
+	$(".edit").keypress(function()
+	{
+		var key = event.which;
+		
+		if (key == 13) $(this).blur();
+	});
+	
 	$(".edit").keydown(function()
 	{
 
@@ -289,6 +296,8 @@ $(document).ready(function()
 		if (vitality > hitPointsArray.length) return hitPointsArray[hitPointsArray.length-1];
 		return hitPointsArray[vitality];
 	}
+	
+	
 	
 	
 	// Parse the array of costs, unless you get to the end, then use the APPX formula
