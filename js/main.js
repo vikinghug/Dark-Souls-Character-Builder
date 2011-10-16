@@ -48,16 +48,61 @@ $(document).ready(function()
 	// Add +1 to stat
 	$(".add").click(function()
 	{
-		AdjustStat($(this), 1);
-
+		var amount = 0;
+		
+		if (event.shiftKey) amount = 10;
+		else amount = 1;
+		
+		AdjustStat($(this), amount);
+		
+		$(this).parents(".stat").find(".current").focus();
 	});
 	
 	// Subtract -1 from stat
 	$(".subtract").click(function()
 	{
 
-		AdjustStat($(this), -1);	
+		var amount = 0;
 		
+		if (event.shiftKey) amount = -10;
+		else amount = -1;
+		
+		AdjustStat($(this), amount);
+		
+		$(this).parents(".stat").find(".current").focus();
+		
+	});
+	
+	$(".edit").keydown(function()
+	{
+
+		var key = event.which;
+		var hotkey = false;
+		var amount = 0;
+		
+		if (key == 38)
+		{
+			hotkey = true;
+			if (event.shiftKey) amount = 10;
+			else amount = 1;
+		}
+		if (key == 40)
+		{
+			hotkey = true;
+			if (event.shiftKey) amount = -10;
+			else amount = -1;
+		}
+		
+		if (hotkey)
+		{
+			event.target.blur();
+			event.preventDefault();
+			
+			AdjustStat($(this), amount);
+			$(this).focus();
+			
+			
+		}
 	});
 	
 	// Visual up/down for + and -
@@ -244,32 +289,6 @@ $(document).ready(function()
 		if (vitality > hitPointsArray.length) return hitPointsArray[hitPointsArray.length-1];
 		return hitPointsArray[vitality];
 	}
-	
-	function CalculateStamina(vitality)
-	{
-		return 0;
-	}
-	
-	
-	
-	
-	// Calculate Spell Slots
-	function CalculateSpellSlots(value)
-	{
-		if (value >= 0  && value <= 9 ) return 0;
-		if (value >= 10 && value <= 11) return 1;
-		if (value >= 12 && value <= 13) return 2;
-		if (value >= 14 && value <= 15) return 3;
-		if (value >= 16 && value <= 18) return 4;
-		if (value >= 19 && value <= 22) return 5;
-		if (value >= 23 && value <= 27) return 6;
-		if (value >= 28 && value <= 33) return 7;
-		if (value >= 34 && value <= 40) return 8;
-		if (value >= 41 && value <= 49) return 9;
-		if (value >= 50 && value <= 99) return 10;
-	}
-	
-	
 	
 	
 	// Parse the array of costs, unless you get to the end, then use the APPX formula
