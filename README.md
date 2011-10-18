@@ -9,7 +9,7 @@
 
 [ Previous Updates ]
 -----------------------------------
--v0.31d
+- v0.31d
 * Added A slew of hotkeys to the builder (These are relative to stats)
  * UP: Increment Stat by +1
  * DOWN: Decrement Stat by -1
@@ -66,5 +66,5 @@
 
 
 ### BUGS
-- Input fields do not reset to white when switching classes
-- ~~Too man stats returns NaN in Total Cost... need to build the formula for stat calculation~~
+- ~~Input fields do not reset to white when switching classes~~
+- ~~Too many stats returns NaN in Total Cost... need to build the formula for stat calculation~~
