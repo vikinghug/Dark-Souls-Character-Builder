@@ -2,8 +2,13 @@
 ======================================
 ### v0.3d
 
-[ UPDATE ] v0.31d
+[ UPDATE ] v0.4d
 -----------------------------------
+* Added profile sharing, as well as a huge list of bug fixes
+
+[ Previous Updates ]
+-----------------------------------
+- v0.31d
 * Added A slew of hotkeys to the builder (These are relative to stats)
  * UP: Increment Stat by +1
  * DOWN: Decrement Stat by -1
@@ -11,8 +16,6 @@
  * SHIFT+DOWN: Decrement Stat by -10
  * SHIFT+Click on Plus or Minus: +10 or -10 to stat
 
-[ Previous Updates ]
------------------------------------
 - v0.3d
  * New layout, to reflect the in-game display
  * Added HP Conversion (this is the first of many conversions in this major update)
@@ -26,10 +29,6 @@
 - v0.2d
  + Basic Art: just to make it not so atrocious.
  + New Layout: more understandable
-
-
-### NEXT
-* Cache values (prep work for profile saving)
 
 
 ### BACKLOG
@@ -46,7 +45,7 @@
  * Humanity -> Item Discovery Rate
  * Humanity -> Curse Resist
 * Profile Saving
-* Profile Sharing
+* ~~Profile Sharing~~
 * ~~Manual Stat entry~~
 * ~~"Starting Cost" for souls is redundant, should be remove~~
 * ~~Calculate Soul costs based on stats~~
@@ -62,5 +61,5 @@
 
 
 ### BUGS
-- Input fields do not reset to white when switching classes
+- ~~Input fields do not reset to white when switching classes~~
 - ~~Too man stats returns NaN in Total Cost... need to build the formula for stat calculation~~

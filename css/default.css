@@ -207,5 +207,40 @@ label
 #footer
 {
 	margin: 0 auto;
+	width: 600px;
+}
+
+
+
+/* TEMPLATE CODE */
+#wrapCode
+{
+	line-height: 26px;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+#templateCode
+{
+	border: 1px solid #555;
+	background: #222;
+	color: #aaa;
 	width: 500px;
 }
+
+
+/* DISABLED */
+#stamina, #equipload, #poise, #bleedresist, #poisonresist, #curseresist
+{
+	color: #444;
+}
+
+#stamina input, #equipload input, #poise  input, #bleedresist input, #poisonresist input, #curseresist input
+{
+	background-color: #333;
+}
+
+
+
+
