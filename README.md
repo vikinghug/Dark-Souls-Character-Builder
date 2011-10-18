@@ -64,7 +64,9 @@
 * Armor Calculator
 * Manual Soul Level entry, to allow locked stat allocation.
 
+### Bugs
+* Total Soul cost not updating when linking profile share
+* ~~Input fields do not reset to white when switching classes~~
+* ~~Too many stats returns NaN in Total Cost... need to build the formula for stat calculation~~
 
-### BUGS
-- ~~Input fields do not reset to white when switching classes~~
-- ~~Too many stats returns NaN in Total Cost... need to build the formula for stat calculation~~
+### EOF
