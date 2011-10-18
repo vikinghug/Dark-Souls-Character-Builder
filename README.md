@@ -10,12 +10,12 @@
 [ Previous Updates ]
 -----------------------------------
 - v0.31d
-* Added A slew of hotkeys to the builder (These are relative to stats)
- * UP: Increment Stat by +1
- * DOWN: Decrement Stat by -1
- * SHIFT+UP: Increment Stat by +10
- * SHIFT+DOWN: Decrement Stat by -10
- * SHIFT+Click on Plus or Minus: +10 or -10 to stat
+ * Added A slew of hotkeys to the builder (These are relative to stats)
+  * UP: Increment Stat by +1
+  * DOWN: Decrement Stat by -1
+  * SHIFT+UP: Increment Stat by +10
+  * SHIFT+DOWN: Decrement Stat by -10
+  * SHIFT+Click on Plus or Minus: +10 or -10 to stat
 
 - v0.3d
  * New layout, to reflect the in-game display
