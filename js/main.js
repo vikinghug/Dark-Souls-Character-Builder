@@ -227,7 +227,9 @@ $(document).ready(function()
 				soulModifier = newValue - cacheCurrentStat;
 			}
 		}
-		
+		// return if modifier sets sould levelgreater than 99
+		if((currentSoulLevel + soulModifier)>99)
+			return;
 		// SET THE VALUE OF THE STAT
 		SetStat(currentItem, newValue);
 		
