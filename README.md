@@ -46,8 +46,8 @@ Dark Souls Character Builder
 - Display Humanity conversions : http://darksouls.wikidot.com/humanity
 ** Humanity -> Item Discovery Rate
 ** Humanity -> Curse Resist
-* ~~Profile Saving
-* Profile Sharing~~
+* ~~Profile Saving~~
+* ~~Profile Sharing~~
 * ~~Manual Stat entry~~
 * ~~"Starting Cost" for souls is redundant, should be remove~~
 * ~~Calculate Soul costs based on stats~~
