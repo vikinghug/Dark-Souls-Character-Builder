@@ -1,14 +1,17 @@
  Dark Souls Character Builder
 ======================================
-### v0.3d
 
-[ UPDATE ] v0.4d
+[ UPDATE ] v0.41d
 -----------------------------------
-* Added profile sharing, as well as a huge list of small bug fixes
+* New Endurance Conversions (stamina & equip load)
+* Clamp values at max 99
 
 
 [ Previous Updates ]
 -----------------------------------
+- v0.4d
+ * Added profile sharing, as well as a huge list of small bug fixes
+  
 - v0.31d
  * Added A slew of hotkeys to the builder (These are relative to stats)
   * UP: Increment Stat by +1
