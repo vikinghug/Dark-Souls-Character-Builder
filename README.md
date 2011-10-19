@@ -37,11 +37,12 @@
 
 
 ### BACKLOG
+* ~~Clamp stats Start Value <-> 99~~
 * Reset stats button
 * Display Attunement -> Spell Slots conversion : http://darksouls.wikidot.com/attunement
 * Display Endurance conversions : http://darksouls.wikidot.com/endurance
- * Endurance -> Equip Burden
- * Endurance -> Stamina
+ * ~~Endurance -> Equip Burden~~
+ * ~~Endurance -> Stamina~~
  * Endurance -> Bleed Resistance
  * Endurance -> Roll Speed
 * ~~Display Vitality -> HP conversion : http://darksouls.wikidot.com/vitality~~
