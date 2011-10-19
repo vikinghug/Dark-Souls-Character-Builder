@@ -9,28 +9,28 @@ Dark Souls Character Builder
 [ Previous Updates ]
 -----------------------------------
 - v0.4d
-* Added profile sharing, as well as a huge list of small bug fixes
+ * Added profile sharing, as well as a huge list of small bug fixes
 
 - v0.31d
-* Added A slew of hotkeys to the builder (These are relative to stats)
-* UP: Increment Stat by +1
-* DOWN: Decrement Stat by -1
-* SHIFT+UP: Increment Stat by +10
-* SHIFT+DOWN: Decrement Stat by -10
-* SHIFT+Click on Plus or Minus: +10 or -10 to stat
+ * Added A slew of hotkeys to the builder (These are relative to stats)
+ * UP: Increment Stat by +1
+ * DOWN: Decrement Stat by -1
+ * SHIFT+UP: Increment Stat by +10
+ * SHIFT+DOWN: Decrement Stat by -10
+ * SHIFT+Click on Plus or Minus: +10 or -10 to stat
 - v0.3d
-* New layout, to reflect the in-game display
-* Added HP Conversion (this is the first of many conversions in this major update)
+ * New layout, to reflect the in-game display
+ * Added HP Conversion (this is the first of many conversions in this major update)
 
 - v0.21d
-* Manual Stat entry
-* "Starting Cost" for souls is redundant, should be remove
-* Basic Art: just to make it not so atrocious.
-* New Layout: more understandable
+ * Manual Stat entry
+ * "Starting Cost" for souls is redundant, should be remove
+ * Basic Art: just to make it not so atrocious.
+ * New Layout: more understandable
 
 - v0.2d
-* Basic Art: just to make it not so atrocious.
-* New Layout: more understandable
+ * Basic Art: just to make it not so atrocious.
+ * New Layout: more understandable
 
 ### BACKLOG
 * ~~Clamp values at max 99~~
