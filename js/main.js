@@ -294,9 +294,12 @@ $(document).ready(function()
 		selectedClass.text(selectedClass.val());
 		
 		
+		var startSoulLevel = selectedClassArray[1];
+		var currentSoulLevel = currentClassArray[1];
+		
 		//starting stats
 		$("#calc .start").val();
-		$("#soullevel .start").text(selectedClassArray[1]);
+		$("#soullevel .start").text(startSoulLevel);
 		
 		$("#vitality .start").text(selectedClassArray[2]);
 		$("#attunement .start").text(selectedClassArray[3]);
@@ -309,7 +312,7 @@ $(document).ready(function()
 		
 		
 		// current stats
-		SetStat($("#soullevel .current"),currentClassArray[1]);;
+		SetStat($("#soullevel .current"), currentSoulLevel);
 		SetStat($("#vitality .current"), currentClassArray[2]);
 		SetStat($("#attunement .current"), currentClassArray[3]);
 		SetStat($("#endurance .current"), currentClassArray[4]);
@@ -319,13 +322,9 @@ $(document).ready(function()
 		SetStat($("#intelligence .current"), currentClassArray[8]);
 		SetStat($("#faith .current"), currentClassArray[9]);
 		
-		// calc
-		
-		
-		var soulLevel = parseInt($("#soullevel .current").val());
-		
-		$("#calc .current").val(CalculateSoulCost(soulLevel));
-		$("#calc .total").text(0);
+		// calc		
+		$("#calc .current").val(CalculateSoulCost(currentSoulLevel));
+		$("#calc .total").text(ParseSoulCost(startSoulLevel, currentSoulLevel));
 		
 		// Set Vitality
 		$("#HP .current").val(CalculateHitPoints(currentClassArray[1]));
