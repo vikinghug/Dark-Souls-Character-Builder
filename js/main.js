@@ -217,7 +217,7 @@ $(document).ready(function()
 			if ((currentValue + modifier) > 99)
 			{				
 				newValue = 99;
-				soulModifier = 0;
+				soulModifier = 99 -currentValue;
 			}
 			else if (currentValue >= startValue && (currentValue + modifier) >= startValue && currentValue <= 99) newValue = currentValue + modifier;
 			else
@@ -227,12 +227,7 @@ $(document).ready(function()
 				soulModifier = newValue - cacheCurrentStat;
 			}
 		}
-		// adjust input value if modifier exceeds max
-		if((currentSoulLevel + soulModifier)>99)
-		{
-			newValue-=(currentSoulLevel + soulModifier)-99;
-			soulModifier-=(currentSoulLevel + soulModifier)-99;
-		}
+		
 		// SET THE VALUE OF THE STAT
 		SetStat(currentItem, newValue);
 		
