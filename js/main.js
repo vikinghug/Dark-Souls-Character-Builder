@@ -227,9 +227,12 @@ $(document).ready(function()
 				soulModifier = newValue - cacheCurrentStat;
 			}
 		}
-		// return if modifier sets sould levelgreater than 99
+		// adjust input value if modifier exceeds max
 		if((currentSoulLevel + soulModifier)>99)
-			return;
+		{
+			newValue-=(currentSoulLevel + soulModifier)-99;
+			soulModifier-=(currentSoulLevel + soulModifier)-99;
+		}
 		// SET THE VALUE OF THE STAT
 		SetStat(currentItem, newValue);
 		
