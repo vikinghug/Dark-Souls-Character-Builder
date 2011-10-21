@@ -37,19 +37,19 @@ Dark Souls Character Builder
 * Reset stats button
 * Display Attunement -> Spell Slots conversion : http://darksouls.wikidot.com/attunement
 - Display Endurance conversions : http://darksouls.wikidot.com/endurance
-** ~~Endurance -> Equip Burden~~
-** ~~Endurance -> Stamina~~
-** Endurance -> Bleed Resistance
-** Endurance -> Roll Speed
+ * ~~Endurance -> Equip Burden~~
+ * ~~Endurance -> Stamina~~
+ * ~~Endurance -> Bleed Resistance~~
+ * Endurance -> Roll Speed
 * ~~Display Vitality -> HP conversion : http://darksouls.wikidot.com/vitality~~
 * Display Resistance -> Resistances conversion : http://darksouls.wikidot.com/resistance
-- Display Humanity conversions : http://darksouls.wikidot.com/humanity
-** Humanity -> Item Discovery Rate
-** Humanity -> Curse Resist
+* Display Humanity conversions : http://darksouls.wikidot.com/humanity
+ * Humanity -> Item Discovery Rate
+ * Humanity -> Curse Resist
 * ~~Profile Saving~~
 * ~~Profile Sharing~~
 * ~~Manual Stat entry~~
-* ~~"Starting Cost" for souls is redundant, should be remove~~
+* ~~"Starting Cost" for souls is redundant, should be removed~~
 * ~~Calculate Soul costs based on stats~~
 * ~~Calculate Soul Level based on stats~~
 * ~~Add & Subtract Stats~~
@@ -62,5 +62,5 @@ Dark Souls Character Builder
 
 
 ### BUGS
-- Input fields do not reset to white when switching classes
-* Too many stats returns NaN in Total Cost... need to build the formula for stat calculation
+- ~~Input fields do not reset to white when switching classes~~
+* ~~Too many stats returns NaN in Total Cost... need to build the formula for stat calculation~~
