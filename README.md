@@ -1,13 +1,16 @@
 Dark Souls Character Builder
 =====================================
 
-[ UPDATE ] v0.41d
+[ UPDATE ]v0.42d
 -----------------------------------
-* New Endurance Conversions (stamina & equip load)
-* Clamp values at max 99
+* Implement Bleed Resistance Conversion
 
 [ Previous Updates ]
 -----------------------------------
+- v0.41d
+ * New Endurance Conversions (stamina & equip load)
+ * Clamp values at max 99
+
 - v0.4d
  * Added profile sharing, as well as a huge list of small bug fixes
 
