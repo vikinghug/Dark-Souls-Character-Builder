@@ -1,0 +1,19 @@
+!= render :partial => 'stat_builder'
+
+= form_for @profile do |f|
+  - if f.object.errors.any?
+    %ul
+      - f.object.errors.full_messages.each do |msg|
+        %li= msg
+  = f.label :name
+  = f.text_field :name
+  = f.submit
+  = f.hidden_field :stats
+
+:javascript
+  $(document).ready(function()
+  {
+    // Run the CharSetup function
+    var params = GetCode($("#profile_stats").val());
+    CharSetup(params);
+  });

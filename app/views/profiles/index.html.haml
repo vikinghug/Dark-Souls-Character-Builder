@@ -1,0 +1,7 @@
+%h1 Profile list (using HAML)
+
+%ul
+  - @profiles.each do |profile|
+    %li= link_to profile.name, profile
+
+= link_to "Create a new Profile", new_profile_path
