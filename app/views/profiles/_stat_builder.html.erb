@@ -173,46 +173,6 @@
         <input id="templateCode" />
       </div>
     </div>
-
-    <div id="footer">
-      <%- if Rails.env.production? -%>
-      <div style="clear:both"><br/><hr /><br/></div>
-
-      <div id="disqus_thread"></div>
-        <script type="text/javascript">
-          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-          var disqus_shortname = 'soulbuilder'; // required: replace example with your forum shortname
-          var disqus_identifier = '2583573';
-
-          /* * * DON'T EDIT BELOW THIS LINE * * */
-          (function()
-          {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-          console.debug(document.getElementsByTagName('head')[0]);
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <%- end -%>
-    </div>
+    
   </div>
 </div>
-<%- if Rails.env.production? -%>
-<script type="text/javascript">
-  var host = ('https:' == document.location.protocol ? 'https://ssl.' : 'http://met.');
-  document.write(unescape("%3Cscript src='" + host + "picnet.com.au/resources/scripts/met.client.min.js?usercode=227152192924864' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script src="//static.getclicky.com/js" type="text/javascript"></script>
-<script type="text/javascript">try{ clicky.init(66489646); }catch(e){}</script>
-<noscript></noscript>
-<%- end -%>
-<script type="text/javascript">
-  $(document).ready(function()
-  {
-    // Run the CharSetup function
-    var params = GetCode($.getUrlVar("c"));	
-    CharSetup(params);
-  });
-</script>

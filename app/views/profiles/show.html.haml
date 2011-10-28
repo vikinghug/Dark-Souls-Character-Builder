@@ -1,0 +1,9 @@
+!= render :partial => 'stat_builder'
+
+:javascript
+  $(document).ready(function()
+  {
+    // Run the CharSetup function
+    var params = GetCode("#{@profile.stats}");
+    CharSetup(params);
+  });
