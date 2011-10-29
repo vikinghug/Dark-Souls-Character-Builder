@@ -1,178 +1,168 @@
-<div id="wrapFullPage">
-  <div id="content">
-    <div id="header">
-      <img src="/images/logo.png" />
-      <p style="text-align: center">Development Release 0.41d <br />
-              [ 10/19/2011 UPDATED - BUG FIX ]</p>
+<div id="wrapBuilder">
+  <div id="colLeft" class="the300">
+    <div id="wrapClass">
+      <label>Class</label>
+      <select id="class" onchange="" size="1">
+        <option value="Warrior">4 - Warrior</option>
+        <option value="Knight">5 - Knight</option>
+        <option value="Wanderer">3 - Wanderer</option>
+        <option value="Thief">5 - Thief</option>
+        <option value="Bandit">4 - Bandit</option>
+        <option value="Hunter">4 - Hunter</option>
+        <option value="Sorcerer">3 - Sorcerer</option>
+        <option value="Pyromancer">1 - Pyromancer</option>
+        <option value="Cleric">2 - Cleric</option>
+        <option value="Deprived">6 - Deprived</option>
+
+      </select>
+    </div>
+    <p />
+    <div class="stattitles">
+      <label></label>
+      <div class="title" >STARTING</div>
+      <div class="title">CURRENT</div>
+    </div>
+    <div id="soullevel" class="stat">
+      <label>Soul Level</label>
+      <div class="start" ></div>
+      <input class="current" readonly />
     </div>
 
-    <div id="wrapBuilder">
-      <div id="colLeft" class="the300">
-        <div id="wrapClass">
-          <label>Class</label>
-          <select id="class" onchange="" size="1">
-            <option value="Warrior">4 - Warrior</option>
-            <option value="Knight">5 - Knight</option>
-            <option value="Wanderer">3 - Wanderer</option>
-            <option value="Thief">5 - Thief</option>
-            <option value="Bandit">4 - Bandit</option>
-            <option value="Hunter">4 - Hunter</option>
-            <option value="Sorcerer">3 - Sorcerer</option>
-            <option value="Pyromancer">1 - Pyromancer</option>
-            <option value="Cleric">2 - Cleric</option>
-            <option value="Deprived">6 - Deprived</option>
+    <hr />
 
-          </select>
-        </div>
-        <p />
-        <div class="stattitles">
-          <label></label>
-          <div class="title" >STARTING</div>
-          <div class="title">CURRENT</div>
-        </div>
-        <div id="soullevel" class="stat">
-          <label>Soul Level</label>
-          <div class="start" ></div>
-          <input class="current" readonly />
-        </div>
+    <div class="stattitles">
+      <label></label>
+      <div class="title" >STARTING</div>
+      <div class="title">CURRENT</div>
+    </div>
 
-        <hr />
-
-        <div class="stattitles">
-          <label></label>
-          <div class="title" >STARTING</div>
-          <div class="title">CURRENT</div>
-        </div>
-
-        <div id="vitality" class="stat">
-          <div class="statShift">
-            <input type="submit" class="subtract" value="" />
-            <input type="submit" class="add" value="" />
-          </div>
-          <label>Vitality</label>
-          <div class="start" ></div>
-          <input class="current edit" tabindex="1" />
-        </div>
-
-        <div id="attunement" class="stat">
-          <div class="statShift">
-            <input type="button" class="subtract" value="" />
-            <input type="button" class="add" value="" />
-          </div>
-          <label>Attunement</label>
-          <div class="start" ></div>
-          <input class="current edit" tabindex="2" />
-
-        </div>
-
-        <div id="endurance" class="stat">
-          <div class="statShift">
-            <input type="button" class="subtract" value="" />
-            <input type="button" class="add" value="" />
-          </div>
-          <label>Endurance</label>
-          <div class="start" ></div>
-          <input class="current edit" tabindex="3" />
-
-        </div>
-
-        <div id="strength" class="stat">
-          <div class="statShift">
-            <input type="button" class="subtract" value="" />
-            <input type="button" class="add" value="" />
-          </div>  
-          <label>Strength</label>
-          <div class="start" ></div>
-          <input class="current edit" tabindex="4" />
-        </div>
-
-        <div id="dexterity" class="stat">
-          <div class="statShift">
-            <input type="button" class="subtract" value="" />
-            <input type="button" class="add" value="" />
-          </div>
-          <label>Dexterity</label>
-          <div class="start" ></div>
-          <input class="current edit" tabindex="5" />
-        </div>
-
-        <div id="resistance" class="stat">
-          <div class="statShift">
-            <input type="button" class="subtract" value="" />
-            <input type="button" class="add" value="" />
-          </div>    
-          <label>Resistance</label>
-          <div class="start" ></div>
-          <input class="current edit" tabindex="6" />
-        </div>
-
-        <div id="intelligence" class="stat">
-          <div class="statShift">
-            <input type="button" class="subtract" value="" />
-            <input type="button" class="add" value="" />
-          </div>    
-          <label>Intelligence</label>
-          <div class="start" ></div>
-          <input class="current edit" tabindex="7" />
-        </div>
-
-        <div id="faith" class="stat">
-          <div class="statShift">
-            <input type="button" class="subtract" value="" />
-            <input type="button" class="add" value="" />
-          </div>
-          <label>Faith</label>
-          <div class="start" ></div>
-          <input class="current edit" tabindex="8" />
-        </div>
-
-        <hr />
-
-        <div id="calc">   
-          <div class="title right">TOTAL SOUL COST</div><div class="title" >CURRENT SOUL COST</div>
-          <div class="total right"></div><input class="current" readonly />
-        </div>
-
+    <div id="vitality" class="stat">
+      <div class="statShift">
+        <input type="submit" class="subtract" value="" />
+        <input type="submit" class="add" value="" />
       </div>
+      <label>Vitality</label>
+      <div class="start" ></div>
+      <input class="current edit" tabindex="1" />
+    </div>
+
+    <div id="attunement" class="stat">
+      <div class="statShift">
+        <input type="button" class="subtract" value="" />
+        <input type="button" class="add" value="" />
+      </div>
+      <label>Attunement</label>
+      <div class="start" ></div>
+      <input class="current edit" tabindex="2" />
+
+    </div>
+
+    <div id="endurance" class="stat">
+      <div class="statShift">
+        <input type="button" class="subtract" value="" />
+        <input type="button" class="add" value="" />
+      </div>
+      <label>Endurance</label>
+      <div class="start" ></div>
+      <input class="current edit" tabindex="3" />
+
+    </div>
+
+    <div id="strength" class="stat">
+      <div class="statShift">
+        <input type="button" class="subtract" value="" />
+        <input type="button" class="add" value="" />
+      </div>  
+      <label>Strength</label>
+      <div class="start" ></div>
+      <input class="current edit" tabindex="4" />
+    </div>
+
+    <div id="dexterity" class="stat">
+      <div class="statShift">
+        <input type="button" class="subtract" value="" />
+        <input type="button" class="add" value="" />
+      </div>
+      <label>Dexterity</label>
+      <div class="start" ></div>
+      <input class="current edit" tabindex="5" />
+    </div>
+
+    <div id="resistance" class="stat">
+      <div class="statShift">
+        <input type="button" class="subtract" value="" />
+        <input type="button" class="add" value="" />
+      </div>    
+      <label>Resistance</label>
+      <div class="start" ></div>
+      <input class="current edit" tabindex="6" />
+    </div>
+
+    <div id="intelligence" class="stat">
+      <div class="statShift">
+        <input type="button" class="subtract" value="" />
+        <input type="button" class="add" value="" />
+      </div>    
+      <label>Intelligence</label>
+      <div class="start" ></div>
+      <input class="current edit" tabindex="7" />
+    </div>
+
+    <div id="faith" class="stat">
+      <div class="statShift">
+        <input type="button" class="subtract" value="" />
+        <input type="button" class="add" value="" />
+      </div>
+      <label>Faith</label>
+      <div class="start" ></div>
+      <input class="current edit" tabindex="8" />
+    </div>
+
+    <hr />
+
+    <div id="calc">   
+      <div class="title right">TOTAL SOUL COST</div><div class="title" >CURRENT SOUL COST</div>
+      <div class="total right"></div><input class="current" readonly />
+    </div>
+
+  </div>
 
 <!-- MIDDLE -->
-      <div id="colMid" class="the300">
-        <div id="HP" class="stat">
-          <label>HP</label><input class="current right" readonly />
-        </div>
-
-        <div id="stamina" class="stat">
-          <label>Stamina</label><input class="current right" readonly />
-        </div>
-
-        <div id="equipload" class="stat">
-          <label>Equip Load</label><input class="current right" readonly />
-        </div>
-      </div>
-
-
-      <div id="colRight" class="the300">
-        <div id="poise" class="stat">
-          <label>Poise</label><input class="current right" readonly />
-        </div>
-
-        <div id="bleedresist" class="stat">
-          <label>Bleed Resist</label><input class="current right" readonly />
-        </div>
-
-        <div id="poisonresist" class="stat">
-          <label>Poison Resist</label><input class="current right" readonly />
-        </div>
-
-        <div id="curseresist" class="stat">
-          <label>Curse Resist</label><input class="current right" readonly />
-        </div>
-      </div>
-              <div id="wrapCode">
-                Copy this URL to your clipboard to share this build:<br/>
-        <input id="templateCode" />
-      </div>
+  <div id="colMid" class="the300">
+    <div id="HP" class="stat">
+      <label>HP</label><input class="current right" readonly />
     </div>
-    
+
+    <div id="stamina" class="stat">
+      <label>Stamina</label><input class="current right" readonly />
+    </div>
+
+    <div id="equipload" class="stat">
+      <label>Equip Load</label><input class="current right" readonly />
+    </div>
+  </div>
+
+
+  <div id="colRight" class="the300">
+    <div id="poise" class="stat">
+      <label>Poise</label><input class="current right" readonly />
+    </div>
+
+    <div id="bleedresist" class="stat">
+      <label>Bleed Resist</label><input class="current right" readonly />
+    </div>
+
+    <div id="poisonresist" class="stat">
+      <label>Poison Resist</label><input class="current right" readonly />
+    </div>
+
+    <div id="curseresist" class="stat">
+      <label>Curse Resist</label><input class="current right" readonly />
+    </div>
+  </div>
+          <div id="wrapCode">
+            Copy this URL to your clipboard to share this build:<br/>
+    <input id="templateCode" />
   </div>
 </div>
+
