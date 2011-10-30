@@ -38,7 +38,7 @@ Dark Souls Character Builder
 ### BACKLOG
 * ~~Clamp values at max 99~~
 * Reset stats button
-* Display Attunement -> Spell Slots conversion : http://darksouls.wikidot.com/attunement
+* ~~Display Attunement -> Spell Slots conversion : http://darksouls.wikidot.com/attunement~~
 - Display Endurance conversions : http://darksouls.wikidot.com/endurance
  * ~~Endurance -> Equip Burden~~
  * ~~Endurance -> Stamina~~
