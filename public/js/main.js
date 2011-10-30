@@ -333,7 +333,7 @@ $(document).ready(function()
 		map(9, "faith", true);
 		
        	// calc
-        $("#calc .total").text(ParseSoulCost(start("soulLevel"), current("soullevel")));
+        $("#calc .total").text(ParseSoulCost(start("soullevel"), current("soullevel")));
        
         // Set Vitality
 		calcField("calc", "soullevel", CalculateSoulCost);
