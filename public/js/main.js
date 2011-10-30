@@ -270,84 +270,84 @@ $(document).ready(function()
     // Setup Table function
     window.CharSetup = function($code)
     {        
-        var currentClassArray;
-        var selectedClass = charClass.find("option:selected");       
-        var selectedClassArray = GetClassArray(selectedClass);
+      var currentClassArray;
+      var selectedClass = charClass.find("option:selected");       
+      var selectedClassArray = GetClassArray(selectedClass);
+    
+      if ($code != undefined)
+      {           
+          currentClassArray = $code;            
+          var className = currentClassArray[0];
         
-        if ($code != undefined)
-        {           
-            currentClassArray = $code;            
-            var className = currentClassArray[0];
-            
-            // Select the option with value 
-            selectedClass = charClass.find("option:selected");
-            selectedClass.attr("selected", false);
-            
-            selectedClass = charClass.find("option[value="+className+"]");
-            selectedClass.attr("selected",true);
-            charClass.change();            
-            
-            selectedClassArray = GetClassArray(selectedClass);
-        }
-        else currentClassArray = selectedClassArray;
+          // Select the option with value 
+          selectedClass = charClass.find("option:selected");
+          selectedClass.attr("selected", false);
+        
+          selectedClass = charClass.find("option[value="+className+"]");
+          selectedClass.attr("selected",true);
+          charClass.change();            
+        
+          selectedClassArray = GetClassArray(selectedClass);
+      }
+      else currentClassArray = selectedClassArray;
 
-		console.log(currentClassArray);
-		console.log(selectedClassArray);
-        
-        // Set the names
-        cacheClass.text(GetClassArray(cacheClass)[1] + " - " + cacheClass.val());
-        selectedClass.text(selectedClass.val());        
-        
-		var startMap = {};		
-		var start = function(name) {
-			return startMap[name];
-		};
-		
-		var currentMap = {};
-		var current = function(name) {
-			return currentMap[name];
-		}
-		
-		var map = function(index, name, isStat) {
-			startMap[name] = selectedClassArray[index];
-			currentMap[name] = currentClassArray[index];
-			if (isStat) {
-				$("#" + name + " .start").text(start(name));
-				SetStat($("#" + name + " .current"),current(name));				
-			}
-		};	
-		
-		var calcField = function(fieldName, statName, func) {
-        	$("#" + fieldName + " .current").val(func(current(statName)));			
-		}
-		
-		map(0, "className", false);
-		map(1, "soullevel", true);
-		map(2, "vitality", true);
-		map(3, "attunement", true);
-		map(4, "endurance", true);
-		map(5, "strength", true);
-		map(6, "dexterity", true);
-		map(7, "resistance", true);
-		map(8, "intelligence", true);
-		map(9, "faith", true);
-		
-       	// calc
-        $("#calc .total").text(ParseSoulCost(start("soullevel"), current("soullevel")));
+      console.log(currentClassArray);
+      console.log(selectedClassArray);
+    
+      // Set the names
+      cacheClass.text(GetClassArray(cacheClass)[1] + " - " + cacheClass.val());
+      selectedClass.text(selectedClass.val());        
+    
+      var startMap = {};		
+      var start = function(name) {
+  	    return startMap[name];
+      };
+
+      var currentMap = {};
+      var current = function(name) {
+  	    return currentMap[name];
+      }
+
+      var map = function(index, name, isStat) {
+  	    startMap[name] = selectedClassArray[index];
+  	    currentMap[name] = currentClassArray[index];
+  	    if (isStat) {
+  		    $("#" + name + " .start").text(start(name));
+  		    SetStat($("#" + name + " .current"),current(name));				
+  	    }
+      };	
+
+      var calcField = function(fieldName, statName, func) {
+        $("#" + fieldName + " .current").val(func(current(statName)));			
+      }
+
+  		map(0, "className", false);
+  		map(1, "soullevel", true);
+  		map(2, "vitality", true);
+  		map(3, "attunement", true);
+  		map(4, "endurance", true);
+  		map(5, "strength", true);
+  		map(6, "dexterity", true);
+  		map(7, "resistance", true);
+  		map(8, "intelligence", true);
+  		map(9, "faith", true);
+
+      // calc
+      $("#calc .total").text(ParseSoulCost(start("soullevel"), current("soullevel")));
+   
+      // Set Vitality
+  		calcField("calc", "soullevel", CalculateSoulCost);
+  		calcField("HP", "soullevel", CalculateHitPoints);
+  		calcField("stamina", "endurance", CalculateStamina);
+  		calcField("equipload", "endurance", CalculateEquipLoad);
+  		calcField("spellslots", "attunement", CalculateSpellSlots);
        
-        // Set Vitality
-		calcField("calc", "soullevel", CalculateSoulCost);
-		calcField("HP", "soullevel", CalculateHitPoints);
-		calcField("stamina", "endurance", CalculateStamina);
-		calcField("equipload", "endurance", CalculateEquipLoad);
-		calcField("spellslots", "attunement", CalculateSpellSlots);
-		       
-        // Set the cache
-        cacheClass = selectedClass;
-        cacheStats = GetCurrentStats();
-        
-        // Set the template code
-        SetCode(cacheStats);
+  		// Set the cache
+      cacheClass = selectedClass;
+      cacheStats = GetCurrentStats();
+    
+      // Set the template code
+      SetCode(cacheStats);
     };
     
     function SetStat($item, $value)
