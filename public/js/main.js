@@ -253,6 +253,9 @@ $(document).ready(function()
                 $("#stamina .current").val(CalculateStamina(newValue));
                 $("#equipload .current").val(CalculateEquipLoad(newValue));
                 break;
+			case "attunement":
+				$("#spellslots .current").val(CalculateSpellSlots(newValue));
+				break;
             default:
                 break;
         }
@@ -266,19 +269,14 @@ $(document).ready(function()
     
     // Setup Table function
     window.CharSetup = function($code)
-    {
-        
+    {        
         var currentClassArray;
-        var selectedClass = charClass.find("option:selected");
-        
-
-        
+        var selectedClass = charClass.find("option:selected");       
         var selectedClassArray = GetClassArray(selectedClass);
         
         if ($code != undefined)
         {           
-            currentClassArray = $code;
-            
+            currentClassArray = $code;            
             var className = currentClassArray[0];
             
             // Select the option with value 
@@ -287,65 +285,69 @@ $(document).ready(function()
             
             selectedClass = charClass.find("option[value="+className+"]");
             selectedClass.attr("selected",true);
-            charClass.change();
-            
+            charClass.change();            
             
             selectedClassArray = GetClassArray(selectedClass);
         }
         else currentClassArray = selectedClassArray;
+
+		console.log(currentClassArray);
+		console.log(selectedClassArray);
         
         // Set the names
         cacheClass.text(GetClassArray(cacheClass)[1] + " - " + cacheClass.val());
-        selectedClass.text(selectedClass.val());
+        selectedClass.text(selectedClass.val());        
         
-        
-        var startSoulLevel = selectedClassArray[1];
-        var currentSoulLevel = currentClassArray[1];
-        
-        //starting stats
-        $("#calc .start").val();
-        $("#soullevel .start").text(startSoulLevel);
-        
-        $("#vitality .start").text(selectedClassArray[2]);
-        $("#attunement .start").text(selectedClassArray[3]);
-        $("#endurance .start").text(selectedClassArray[4]);
-        $("#strength .start").text(selectedClassArray[5]);
-        $("#dexterity .start").text(selectedClassArray[6]);
-        $("#resistance .start").text(selectedClassArray[7]);
-        $("#intelligence .start").text(selectedClassArray[8]);
-        $("#faith .start").text(selectedClassArray[9]);
-        
-        
-        // current stats
-        SetStat($("#soullevel .current"), currentSoulLevel);
-        SetStat($("#vitality .current"), currentClassArray[2]);
-        SetStat($("#attunement .current"), currentClassArray[3]);
-        SetStat($("#endurance .current"), currentClassArray[4]);
-        SetStat($("#strength .current"), currentClassArray[5]);
-        SetStat($("#dexterity .current"), currentClassArray[6]);
-        SetStat($("#resistance .current"), currentClassArray[7]);
-        SetStat($("#intelligence .current"), currentClassArray[8]);
-        SetStat($("#faith .current"), currentClassArray[9]);
-        
-        // calc     
-        $("#calc .current").val(CalculateSoulCost(currentSoulLevel));
-        $("#calc .total").text(ParseSoulCost(startSoulLevel, currentSoulLevel));
-        
+		var startMap = {};		
+		var start = function(name) {
+			return startMap[name];
+		};
+		
+		var currentMap = {};
+		var current = function(name) {
+			return currentMap[name];
+		}
+		
+		var map = function(index, name, isStat) {
+			startMap[name] = selectedClassArray[index];
+			currentMap[name] = currentClassArray[index];
+			if (isStat) {
+				$("#" + name + " .start").text(start(name));
+				SetStat($("#" + name + " .current"),current(name));				
+			}
+		};	
+		
+		var calcField = function(fieldName, statName, func) {
+        	$("#" + fieldName + " .current").val(func(current(statName)));			
+		}
+		
+		map(0, "className", false);
+		map(1, "soullevel", true);
+		map(2, "vitality", true);
+		map(3, "attunement", true);
+		map(4, "endurance", true);
+		map(5, "strength", true);
+		map(6, "dexterity", true);
+		map(7, "resistance", true);
+		map(8, "intelligence", true);
+		map(9, "faith", true);
+		
+       	// calc
+        $("#calc .total").text(ParseSoulCost(start("soulLevel"), current("soullevel")));
+       
         // Set Vitality
-        $("#HP .current").val(CalculateHitPoints(currentClassArray[1]));
-        $("#stamina .current").val(CalculateStamina(currentClassArray[4]));
-        $("#equipload .current").val(CalculateEquipLoad(currentClassArray[4]));
-        
-        
-        
+		calcField("calc", "soullevel", CalculateSoulCost);
+		calcField("HP", "soullevel", CalculateHitPoints);
+		calcField("stamina", "endurance", CalculateStamina);
+		calcField("equipload", "endurance", CalculateEquipLoad);
+		calcField("spellslots", "attunement", CalculateSpellSlots);
+		       
         // Set the cache
         cacheClass = selectedClass;
         cacheStats = GetCurrentStats();
         
         // Set the template code
         SetCode(cacheStats);
-        
-
     };
     
     function SetStat($item, $value)
@@ -410,10 +412,7 @@ $(document).ready(function()
     {
         return parseInt($("#endurance .current").val()) + 34;
     }
-    
-    
-    
-    
+       
     // Calculate Spell Slots
     function CalculateSpellSlots(value)
     {
