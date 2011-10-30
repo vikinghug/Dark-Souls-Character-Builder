@@ -23,6 +23,15 @@ $(document).ready(function()
     
     var cacheStats;
     
+    var startMap = {};		
+    var start = function(name) {
+	    return startMap[name];
+    };
+
+    var currentMap = {};
+    var current = function(name) {
+	    return currentMap[name];
+    }   
     
     // GET URL VARS
     $.extend(
@@ -297,16 +306,6 @@ $(document).ready(function()
       // Set the names
       cacheClass.text(GetClassArray(cacheClass)[1] + " - " + cacheClass.val());
       selectedClass.text(selectedClass.val());        
-    
-      var startMap = {};		
-      var start = function(name) {
-  	    return startMap[name];
-      };
-
-      var currentMap = {};
-      var current = function(name) {
-  	    return currentMap[name];
-      }
 
       var map = function(index, name, isStat) {
   	    startMap[name] = selectedClassArray[index];
