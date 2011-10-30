@@ -292,13 +292,13 @@ $(document).ready(function()
           selectedClassArray = GetClassArray(selectedClass);
       }
       else currentClassArray = selectedClassArray;
-      
-      selectedCharacter = new dsCharacter().initWithStats(selectedClassArray);
-      currentCharacter = new dsCharacter().initWithStats(currentClassArray);
     
       // Set the names
       cacheClass.text(GetClassArray(cacheClass)[1] + " - " + cacheClass.val());
       selectedClass.text(selectedClass.val());        
+            
+      selectedCharacter = new dsCharacter().initWithStats(selectedClassArray);
+      currentCharacter = new dsCharacter().initWithStats(currentClassArray);
 
 		  $("#soullevel .start").text(selectedCharacter.soulLevel);
 		  SetStat($("#soullevel .current"),currentCharacter.soulLevel);
