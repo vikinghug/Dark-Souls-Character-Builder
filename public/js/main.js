@@ -23,15 +23,8 @@ $(document).ready(function()
     
     var cacheStats;
     
-    var startMap = {};		
-    var start = function(name) {
-	    return startMap[name];
-    };
-
-    var currentMap = {};
-    var current = function(name) {
-	    return currentMap[name];
-    }   
+    var currentCharacter;
+    var selectedCharacter;
     
     // GET URL VARS
     $.extend(
@@ -299,47 +292,41 @@ $(document).ready(function()
           selectedClassArray = GetClassArray(selectedClass);
       }
       else currentClassArray = selectedClassArray;
-
-      console.log(currentClassArray);
-      console.log(selectedClassArray);
+      
+      selectedCharacter = new dsCharacter().initWithStats(selectedClassArray);
+      currentCharacter = new dsCharacter().initWithStats(currentClassArray);
     
       // Set the names
       cacheClass.text(GetClassArray(cacheClass)[1] + " - " + cacheClass.val());
       selectedClass.text(selectedClass.val());        
 
-      var map = function(index, name, isStat) {
-  	    startMap[name] = selectedClassArray[index];
-  	    currentMap[name] = currentClassArray[index];
-  	    if (isStat) {
-  		    $("#" + name + " .start").text(start(name));
-  		    SetStat($("#" + name + " .current"),current(name));				
-  	    }
-      };	
-
-      var calcField = function(fieldName, statName, func) {
-        $("#" + fieldName + " .current").val(func(current(statName)));			
-      }
-
-  		map(0, "className", false);
-  		map(1, "soullevel", true);
-  		map(2, "vitality", true);
-  		map(3, "attunement", true);
-  		map(4, "endurance", true);
-  		map(5, "strength", true);
-  		map(6, "dexterity", true);
-  		map(7, "resistance", true);
-  		map(8, "intelligence", true);
-  		map(9, "faith", true);
+		  $("#soullevel .start").text(selectedCharacter.soulLevel);
+		  SetStat($("#soullevel .current"),currentCharacter.soulLevel);
+		  
+		  var fillFromChar = function(name) {
+		    $("#" + name + " .start").text(selectedCharacter[name]);
+		    SetStat($("#" + name + " .current"),currentCharacter[name]);		    
+		  }
+		  
+		  fillFromChar("vitality");
+		  fillFromChar("attunement");		  
+		  fillFromChar("endurance");
+		  fillFromChar("strength");
+		  fillFromChar("dexterity");
+		  fillFromChar("resistance");
+		  fillFromChar("intelligence");
+		  fillFromChar("faith");
 
       // calc
-      $("#calc .total").text(ParseSoulCost(start("soullevel"), current("soullevel")));
+      var totalSouls = currentCharacter.getSoulCost(selectedCharacter.soulLevel);
+      $("#calc .total").text(totalSouls);
    
       // Set Vitality
-  		calcField("calc", "soullevel", CalculateSoulCost);
-  		calcField("HP", "soullevel", CalculateHitPoints);
-  		calcField("stamina", "endurance", CalculateStamina);
-  		calcField("equipload", "endurance", CalculateEquipLoad);
-  		calcField("spellslots", "attunement", CalculateSpellSlots);
+      $("#calc .current").val(currentCharacter.calculateSoulCost(currentCharacter.soulLevel));
+      $("#HP .current").val(currentCharacter.getHP());
+      $("#stamina .current").val(currentCharacter.getStamina());
+      $("#equipload .current").val(currentCharacter.getEquipLoad());
+      $("#spellslots .current").val(currentCharacter.getSpellSlots());
        
   		// Set the cache
       cacheClass = selectedClass;
@@ -428,9 +415,7 @@ $(document).ready(function()
         if (value >= 50 && value <= 99) return 10;
     }
     
-    
-    
-    
+      
     // Parse the array of costs, unless you get to the end, then use the APPX formula
     function ParseSoulCost(startSoulLevel, currentSoulLevel)
     {
