@@ -231,12 +231,12 @@ label
 
 
 /* DISABLED */
-#poise, #bleedresist, #poisonresist, #curseresist
+#poise, #curseresist
 {
 	color: #444;
 }
 
-#poise  input, #bleedresist input, #poisonresist input, #curseresist input
+#poise  input, #curseresist input
 {
 	background-color: #333;
 }
