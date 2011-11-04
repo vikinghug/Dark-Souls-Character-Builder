@@ -67,3 +67,12 @@ Dark Souls Character Builder
 ### BUGS
 - ~~Input fields do not reset to white when switching classes~~
 * ~~Too many stats returns NaN in Total Cost... need to build the formula for stat calculation~~
+
+### Bootstrapping Guide
+
+    gem install bundler
+    bundle install
+    ln -nfs database.example.yml config/database.yml
+    bundle exec rake db:create:all
+    bundle exec rake db:migrate
+
