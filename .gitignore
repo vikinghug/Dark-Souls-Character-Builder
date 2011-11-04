@@ -5,3 +5,5 @@ log/*.log
 tmp/
 .sass-cache/
 /config/database.yml
+/public/.htaccess
+/vendor/bundle/
