@@ -422,7 +422,6 @@ $(document).ready(function()
     
     function CalculateStamina(endurance)
     {
-        console.log(staminaArray[endurance])
         if (endurance > staminaArray.length) return staminaArray[staminaArray.length];
         return staminaArray[endurance];
     }
