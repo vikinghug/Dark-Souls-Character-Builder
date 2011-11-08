@@ -396,7 +396,6 @@ $(document).ready(function()
     
     function GetCurrentStats()
     {
-        
         temp = [];
         temp.push(cacheClass.val());
         temp.push($("#soullevel .current").val());
