@@ -274,7 +274,7 @@ label
 {
 	display: inline-block; 
 	background-image: url(../images/twitter.png);
-	background-position: 0 0;
+	background-position: 0 -30px;
 	background-repeat: no-repeat;
 	overflow: hidden;
 	height: 30px;
@@ -286,5 +286,5 @@ label
 
 #twitter .the960 p a.twitterLogo:hover
 {
-	background-position: 0 -30px;
+	background-position: 0 0;
 }

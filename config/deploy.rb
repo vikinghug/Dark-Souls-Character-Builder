@@ -6,9 +6,9 @@ set :deploy_to, defer {"/home/itsthatg/apps/#{application}"}
 
 set :scm, :git
 
-role :web, "itsthatguy.com"
-role :app, "itsthatguy.com"
-role :db,  "itsthatguy.com", :primary => true
+role :web, "174.120.146.114"
+role :app, "174.120.146.114"
+role :db,  "174.120.146.114", :primary => true
 set :user, "itsthatg"
 
 default_run_options[:pty] = true
