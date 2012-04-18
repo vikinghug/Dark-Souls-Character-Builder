@@ -251,11 +251,13 @@ label
 	position: absolute;
 	margin: 0 auto;
 	padding-top: 10px;
+  position: fixed;
 	top: 0px;
 }
 
 #twitter .the960
 {
+  clear: both;
 	width: 960px;
 	margin: 0 auto;
 }
@@ -265,7 +267,7 @@ label
 	display: inline-block;
 	float: right;
 	margin: 0;
-	padding: 0;
+	padding: 0 10px 0 0;
 	line-height: 24px;
 }
 #twitter .the960 p a.twitterLogo
